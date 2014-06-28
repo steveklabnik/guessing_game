@@ -14,7 +14,7 @@ fn main() {
         println!("Please input guess number {}", guesses + 1);
 
         let input = reader.read_line().ok().expect("Failed to read line");
-        let input_num = from_str::<int>(input.as_slice().trim());
+        let input_num: Option<int> = from_str(input.as_slice().trim());
 
         let num = match input_num  {
             Some(num) => num,
